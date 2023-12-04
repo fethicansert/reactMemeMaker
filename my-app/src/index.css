@@ -1,4 +1,7 @@
 
+:root{
+  --myGradient : linear-gradient(90.41deg, #711f8d 1.14%, #A818DA 100%)
+}
 
 *{
   margin: 0;
@@ -19,15 +22,33 @@ code {
     monospace;
 }
 
-
 .app-container{
-  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 300px;
+  height: 400px;
   margin: 0 auto;
+  background: #232123;
+  color: white;
+}
+
+.title{
+  display: block;
+  margin:  0 auto;
+  width: fit-content;
+  padding: 1.5rem 2rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+  background: whitesmoke;
+  color: #232123;
 }
 
 header{
   margin: 0 auto;
-  background: rebeccapurple;
+  background: var(--myGradient);
   padding: 1rem;
   color: white;
 }
@@ -54,7 +75,7 @@ header{
   display: flex;
   justify-content: space-between;
 }
-
+/* //text indent placeholder veya herhangi bir textin sagina solune girinti cikinti bosluk */
 .input-group input{
   padding: .8rem;
   width: 290px;
@@ -69,7 +90,7 @@ header{
 button{
   margin-top: 2rem;
   width: 100%;
-  background: rebeccapurple;
+  background: var(--myGradient);
   padding: .8rem 0;
   color: white;
   border-radius: 5px;
@@ -81,4 +102,13 @@ button{
 
 button:hover{
   opacity: .9;
+}
+
+.container{
+  width: 300px;
+  margin-top: 2rem;
+}
+
+.ex-img{
+  width: 100%;
 }
