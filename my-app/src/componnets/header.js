@@ -1,6 +1,7 @@
 import memeFace from '../images/meme_face.png'
 
 function Header(){
+    // console.log("Header Render");
     return (
         <header>
             <nav  className='header-nav'>
