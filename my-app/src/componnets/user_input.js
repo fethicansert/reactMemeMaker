@@ -6,11 +6,15 @@ function UserInput(probs){
     //BODY of Function
 
     const [image, setImage] = React.useState(memeData[getRandomNum()].url)
-    const [buttonName, setName] = React.useState('get a new meme imagez');
+    const [meme, setMeme] = React.useState({
+        topText: "Top Text",
+        bottomText: "Bottom Text",
+    });
 
-    function changeButtonName (){
-        setName('get a new memez hehe')
+    function setText(){
+        setMeme()
     }
+
     function getRandomNum(){
         return Math.floor(Math.random() * (memeData.length));
     }
@@ -29,10 +33,14 @@ function UserInput(probs){
 
             <button onClick={()=>{
                 getRandomImage()
-                changeButtonName()
-            }}>{ buttonName }</button>
+            }}>GET NEW MEME IMAGE</button>
 
-            <img src={ image }></img>
+            <button onClick={ setText }>ADD TEXT TO IMAGE</button>
+            <div className="img-container">
+                <p className="top-text">{ meme.topText }</p>
+                <img style={{marginTop:'20px'}} width={'600px'} height={'500px'} className="meme-image" src={ image }></img>
+                <p className="bottom-text">{ meme.bottomText }</p>
+            </div>
         </div>
     );
 }

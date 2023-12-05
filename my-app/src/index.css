@@ -28,8 +28,7 @@ code {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 300px;
-  height: 420px;
+  width: 800px;
   margin: 0 auto;
   background: #232123;
   color: white;
@@ -51,6 +50,7 @@ header{
   background: var(--myGradient);
   padding: 1rem;
   color: white;
+  width: 100%;
 }
 
 .header-nav{
@@ -118,4 +118,26 @@ button:hover{
   border-radius: 50%;
   padding: .5rem;
   margin-bottom: 1rem;
+}
+
+.top-text,
+.bottom-text{
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.top-text{
+  top: 6%;
+}
+
+.bottom-text{
+  bottom: 6%;
+}
+
+.img-container{
+  position: relative;
 }
