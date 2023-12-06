@@ -1,11 +1,10 @@
 import userImage from '../images/user_img.png'
-import  emptyStar  from '../images/star_empty.png'
-import  filledStar  from '../images/star_filled.png'
+
 import React from 'react';
+import Start from './star';
 
 function User(){
  
-    console.log("User Render");
     const [contact, setContact] = React.useState({
       fisrtName: 'John',
       lastName: 'max',
@@ -14,27 +13,18 @@ function User(){
       isFavorite: false
     });
   
-
-    // const [star, setStar] = React.useState(emptyStar);
-    // const [isFavorite, setFavorite] = React.useState(false);
-
-    const starIcon = contact.isFavorite ? filledStar : emptyStar;
-    
-  
     function changeFaV(){
-        // toogle in fasle true = bool = true funtion toogle() => !bool if it's tru
         setContact(prevContact => {
             return {...prevContact, isFavorite: !prevContact.isFavorite}
         });
-
     }
 
     return (
-        <div>
+        <div className='user-container'>
             <div className='user-image-container'>
-                <img className='user-img' src={userImage} width={'200px'} ></img>
+                <img className='user-img' src={userImage} width={'170px'} ></img>
             </div>
-            <img onClick={ changeFaV } src={ starIcon } width={'40px'} style={{ cursor: 'pointer' }}></img>
+            <Start handleClick={ changeFaV } isFavorite={ contact.isFavorite } />
             <h1>{ contact.fisrtName }</h1>
             <p>{ contact.phone }</p>
             <p> { contact.email } </p>
