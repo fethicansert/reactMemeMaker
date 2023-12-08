@@ -28,9 +28,9 @@ code {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 800px;
+  /* width: 800px; */
   margin: 0 auto;
-  background: #232123;
+  background: #000;
   color: white;
 }
 
@@ -152,6 +152,9 @@ button:hover{
   height: 150px;
   border: 1px solid white;
   margin: .5rem;
-  display: inline-block;
+  display: inline-flex;
   color: white;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;  
 }

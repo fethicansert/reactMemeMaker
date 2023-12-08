@@ -6,37 +6,73 @@ import UserInput from './componnets/user_input';
 import User from './componnets/user';
 import Count from './componnets/count';
 import box from './data/boxData.js';
+import Box from './componnets/box';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <App  />
 );
 
+const x = 0  || 'ss';
+console.log(x);
+console.log(0 || 'ss');
+console.log(0 && 'zz');
+function App(props){
 
-function App(){
 
-  const [boxState, setBoxState ] = useState(box);
-
-  // console.log(...box); //When I Loop on box with ... it's log my object like side by side
-
-  // for(const x of box){ //When I Loop on box with for of forEach it's log object uneder each other
-  //   console.log(x);
-  // }
-
-  
-  const boxElements = boxState.map(box => (<div style={{  }} className='box' key={ box.id }>{box.id}</div>));
-  
-  console.log(0 == ''); // burda sagdakini Number('') a cevirerek 0 degerini aliriz onemli olan value dur 0 = 0
-  console.log('0' == 0);// burda da sagdakini toString(0) e cevirerek '0' degerini aliriz '0' = '0' olur
-
+ 
   return (
     <div className='app-container'>
-        { boxElements }
+       <Form />
     </div>
   );
 }
 
-//React element takes style value object => style:{} first bracles for entering js codde to jsx ract element than one more {{}} to add style object
+
+
+function Form(){
+  
+  const [inputs,setInputs] = useState({});
+
+  console.log(inputs);
+  
+  function handleInputs(e){
+    const inputName = e.target.name;
+    const inputValue = e.target.value;
+
+    setInputs(preState => {
+      return {...preState,[inputName]:inputValue}
+    })
+  }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    alert('Submit prevented');
+  }
+
+  return (
+    <form onSubmit = { handleSubmit }>
+      <input  type = 'text' 
+              name = 'name'
+              value = { inputs.name || '' }
+              onChange = { (e) => handleInputs(e) }
+      />   
+      
+
+      <input  type='text'
+              name='age'
+              value={inputs.age || ''}
+              onChange = { (e) => handleInputs(e) }
+              />
+
+
+      <input type='submit' value='Submit'></input>
+    </form>
+  );
+}
+
+
+
 
 {/* <Header />
 <UserInput /> */}
