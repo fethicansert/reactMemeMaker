@@ -23,8 +23,8 @@ code {
 }
 
 .app-container{
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -157,4 +157,14 @@ button:hover{
   border-radius: 5px;
   align-items: center;
   justify-content: center;  
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='text']{
+  margin-bottom: .5rem;
+  padding: .3rem 0;
 }

@@ -13,10 +13,8 @@ root.render(
     <App  />
 );
 
-const x = 0  || 'ss';
-console.log(x);
-console.log(0 || 'ss');
-console.log(0 && 'zz');
+
+
 function App(props){
 
 
@@ -32,17 +30,13 @@ function App(props){
 
 function Form(){
   
-  const [inputs,setInputs] = useState({});
+  const [inputs, setInput] = useState({})
 
   console.log(inputs);
-  
   function handleInputs(e){
     const inputName = e.target.name;
-    const inputValue = e.target.value;
-
-    setInputs(preState => {
-      return {...preState,[inputName]:inputValue}
-    })
+    const inputValue = e.target.value; 
+    setInput(prevState => ({...prevState,[inputName]:inputValue}));
   }
 
   function handleSubmit(e){
@@ -52,20 +46,10 @@ function Form(){
 
   return (
     <form onSubmit = { handleSubmit }>
-      <input  type = 'text' 
-              name = 'name'
-              value = { inputs.name || '' }
-              onChange = { (e) => handleInputs(e) }
-      />   
-      
-
-      <input  type='text'
-              name='age'
-              value={inputs.age || ''}
-              onChange = { (e) => handleInputs(e) }
-              />
-
-
+     
+      <input type='text' name='name' value={ inputs.name || '' } onChange={ (e)=> handleInputs(e) } placeholder='Name'/>
+      <input type='text' name='surname' value={ inputs.surname || '' } onChange={ (e) => handleInputs(e)} placeholder='Surname'/>
+      <input type='text' name='age' value={ inputs.age || '' } onChange={ (e) => handleInputs(e)}  placeholder='Age' />
       <input type='submit' value='Submit'></input>
     </form>
   );
