@@ -28,9 +28,10 @@ code {
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* width: 800px; */
+  width: 400px;
+  padding: 2rem;
   margin: 0 auto;
-  background: #000;
+  background: rebeccapurple;
   color: white;
 }
 
