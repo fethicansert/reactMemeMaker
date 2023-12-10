@@ -168,3 +168,11 @@ input[type='text']{
   margin-bottom: .5rem;
   padding: .3rem 0;
 }
+
+fieldset{
+  padding: 1rem;
+}
+
+fieldset input[type='radio']{
+  margin: .5rem;
+}
